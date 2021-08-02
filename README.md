@@ -9,7 +9,7 @@ https://github.com/open-telemetry/opentelemetry-js/issues/2387
     yarn dev
     ```
 
-2.  Open localhost:3000
+2.  Open [http://localhost:3000](http://localhost:3000)
 3.  See error in console
 
     ```
