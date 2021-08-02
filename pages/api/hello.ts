@@ -1,8 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
 require('../../trace')
 
 export default (req, res) => {
+  console.log({ hit: true })
   res.statusCode = 200
   res.json({ name: 'John Doe' })
 }
