@@ -1,4 +1,4 @@
-require('../../trace')
+import '../../demos/basic-service-1'
 
 export default (req, res) => {
   res.statusCode = 200
