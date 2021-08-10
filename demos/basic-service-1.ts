@@ -12,9 +12,16 @@ import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions'
 
 // Setup Exporter
 
-const exporter = new JaegerExporter({
+const jaegerExporter = new JaegerExporter({
   endpoint: 'http://localhost:14268/api/traces',
 })
+
+const consoleExporter = new ConsoleSpanExporter()
+
+// Setup Span Processors
+
+const jaegerSpanProcessor = new SimpleSpanProcessor(jaegerExporter)
+const consoleSpanProcessor = new SimpleSpanProcessor(consoleExporter)
 
 // Setup Provider
 
@@ -24,8 +31,8 @@ const provider = new BasicTracerProvider({
   }),
 })
 
-provider.addSpanProcessor(new SimpleSpanProcessor(exporter))
-provider.addSpanProcessor(new SimpleSpanProcessor(new ConsoleSpanExporter()))
+provider.addSpanProcessor(jaegerSpanProcessor)
+provider.addSpanProcessor(consoleSpanProcessor)
 provider.register()
 
 // Setup Tracer
@@ -43,7 +50,7 @@ for (let i = 0; i < 10; i += 1) {
 mainSpan.end()
 
 // flush and close the connection.
-exporter.shutdown()
+jaegerExporter.shutdown()
 
 /**
  * Helpers

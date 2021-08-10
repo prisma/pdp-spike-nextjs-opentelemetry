@@ -14,6 +14,7 @@
     "@opentelemetry/exporter-collector": "^0.24.0",
     "@opentelemetry/exporter-jaeger": "^0.24.0",
     "@opentelemetry/instrumentation": "^0.24.0",
+    "@opentelemetry/instrumentation-aws-lambda": "^0.24.0",
     "@opentelemetry/instrumentation-express": "^0.24.0",
     "@opentelemetry/instrumentation-graphql": "^0.24.0",
     "@opentelemetry/instrumentation-http": "^0.24.0",
