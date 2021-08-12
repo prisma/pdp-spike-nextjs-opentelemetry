@@ -27,7 +27,7 @@ const consoleSpanProcessor = new SimpleSpanProcessor(consoleExporter)
 
 const provider = new BasicTracerProvider({
   resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: 'basic-service-1',
+    [SemanticResourceAttributes.SERVICE_NAME]: 'service-1',
   }),
 })
 

@@ -23,13 +23,14 @@
     "@opentelemetry/sdk-trace-base": "^0.24.1-alpha.4",
     "@opentelemetry/semantic-conventions": "^0.24.0",
     "@types/next": "^9.0.0",
-    "next": "10.x",
+    "@types/node": "^16.6.0",
+    "next": "11.1.0",
     "react": "17.x",
     "react-dom": "17.x",
     "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
   },
   "devDependencies": {
-    "@types/react": "^17.0.15"
+    "@types/react": "^17.0.17"
   }
 }
