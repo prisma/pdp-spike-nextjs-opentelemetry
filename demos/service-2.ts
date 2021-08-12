@@ -2,9 +2,8 @@ import otel from '@opentelemetry/api'
 import { JaegerExporter } from '@opentelemetry/exporter-jaeger'
 import { NodeTracerProvider } from '@opentelemetry/node'
 import { Resource } from '@opentelemetry/resources'
-import { SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base'
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions'
-// Setup Tracer
+import { SimpleSpanProcessor } from '@opentelemetry/tracing'
 import Timers from 'timers/promises'
 
 // Setup Exporter
@@ -25,11 +24,15 @@ const provider = new NodeTracerProvider({
   }),
 })
 
-// @ts-expect-error
 provider.addSpanProcessor(jaegerSpanProcessor)
 provider.register()
 
+// Setup Tracer
+
 const tracer = otel.trace.getTracer('request')
+
+// Demo
+
 main()
 
 async function main() {

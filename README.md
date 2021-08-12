@@ -6,4 +6,4 @@
 ### Terminal 2
 
 1. `yarn`
-1. `yarn dev`
+2. `yarn dev` or `yarn demos/service-1` or `yarn demos/service-2`
